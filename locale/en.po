@@ -1,0 +1,79 @@
+# Don't remove the two lines below, they're required for gettext to work correctly.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Last-Translator: Simon Sievert\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "MEASURED_POWER"
+msgstr "Flux"
+
+msgid "MEASURED_FIELD_LINE_COUNT"
+msgstr "Field line count"
+
+msgid "FIELD_POWER"
+msgstr "Flux density"
+
+msgid "AREA_DIAMETER"
+msgstr "Area diameter"
+
+msgid "AREA_WIDTH"
+msgstr "Area width"
+
+msgid "AREA_ROTATION"
+msgstr "Area rotation"
+
+msgid "HIDE_UI"
+msgstr "Hide UI"
+
+msgid "SHOW_UI"
+msgstr "Show UI"
+
+msgid "LANGUAGE_SELECTION"
+msgstr "Language selection"
+
+msgid "BUTTON_OK"
+msgstr "Ok"
+
+msgid "RESET_STATE"
+msgstr "Reset"
+
+msgid "CHANGE_AREA_TYPE"
+msgstr "Change area type"
+
+msgid "CHECKBOX_AUTO_ROTATE"
+msgstr "Rotate automatically"
+
+msgid "SLOWER"
+msgstr "slower"
+
+msgid "FASTER"
+msgstr "faster"
+
+msgid "LOCALE_EN"
+msgstr "English"
+
+msgid "LOCALE_DE"
+msgstr "Deutsch"
+
+msgid "ABOUT_THIS_APPLICATION"
+msgstr "About this application"
+
+msgid "BUTTON_CLOSE"
+msgstr "Close"
+
+msgid "HINT_ROTATE_AREA"
+msgstr "Rotate area"
+
+msgid "HINT_MOVE_AREA"
+msgstr "You can move me"
+
+msgid "HINT_CHANGE_LANGUAGE"
+msgstr "Change language"
+
+msgid "HINT_ROTATE_MAGNET"
+msgstr "You can rotate me"

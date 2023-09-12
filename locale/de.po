@@ -1,0 +1,79 @@
+# Don't remove the two lines below, they're required for gettext to work correctly.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Last-Translator: Simon Sievert\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "MEASURED_POWER"
+msgstr "Magnetischer Fluss"
+
+msgid "MEASURED_FIELD_LINE_COUNT"
+msgstr "Feldlinien durch die Fläche"
+
+msgid "FIELD_POWER"
+msgstr "Stärke des Magnetfeldes"
+
+msgid "AREA_DIAMETER"
+msgstr "Durchmesser Fläche"
+
+msgid "AREA_WIDTH"
+msgstr "Seitenlänge Fläche"
+
+msgid "AREA_ROTATION"
+msgstr "Drehung Fläche"
+
+msgid "HIDE_UI"
+msgstr "Menü verstecken"
+
+msgid "SHOW_UI"
+msgstr "Menü anzeigen"
+
+msgid "LANGUAGE_SELECTION"
+msgstr "Sprache ändern"
+
+msgid "BUTTON_OK"
+msgstr "Ok"
+
+msgid "RESET_STATE"
+msgstr "Reset"
+
+msgid "CHANGE_AREA_TYPE"
+msgstr "Flächentyp ändern"
+
+msgid "CHECKBOX_AUTO_ROTATE"
+msgstr "Automatisch drehen"
+
+msgid "SLOWER"
+msgstr "langsamer"
+
+msgid "FASTER"
+msgstr "schneller"
+
+msgid "LOCALE_EN"
+msgstr "English"
+
+msgid "LOCALE_DE"
+msgstr "Deutsch"
+
+msgid "ABOUT_THIS_APPLICATION"
+msgstr "Über diese Anwendung"
+
+msgid "BUTTON_CLOSE"
+msgstr "Schließen"
+
+msgid "HINT_ROTATE_AREA"
+msgstr "Fläche drehen"
+
+msgid "HINT_MOVE_AREA"
+msgstr "Du kannst mich bewegen"
+
+msgid "HINT_CHANGE_LANGUAGE"
+msgstr "Sprache ändern"
+
+msgid "HINT_ROTATE_MAGNET"
+msgstr "Du kannst mich drehen"

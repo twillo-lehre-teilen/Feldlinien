@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/measurementAreas/Square.gd" type="Script" id=1]
+[ext_resource path="res://assets/materials/brushed_metal/brushed_metal_area_bot.tres" type="Material" id=2]
+[ext_resource path="res://assets/materials/brushed_metal/brushed_metal_area_top.tres" type="Material" id=3]
+[ext_resource path="res://assets/materials/material_area_border.tres" type="Material" id=4]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 0.05, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 2, 0.1, 2 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 0.4, 1 )
+
+[node name="Square" type="KinematicBody"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+collision_layer = 0
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="MeshTop" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.025, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshBot" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, -0.025, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Border" type="CSGCombiner" parent="."]
+material_override = ExtResource( 4 )
+
+[node name="Outer" type="CSGBox" parent="Border"]
+width = 2.05
+height = 0.1
+depth = 2.05
+
+[node name="Inner" type="CSGBox" parent="Border"]
+operation = 2
+height = 0.2
+
+[node name="ClickArea" type="Area" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="ClickArea"]
+shape = SubResource( 3 )

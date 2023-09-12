@@ -1,0 +1,33 @@
+Mit dieser Anwendung kann das Konzept des magnetischen Flusses erforscht werden. Betrachtet wird dazu eine geschlossene Leiterschleife im Feld eines virtuellen Magneten. Als Maß für die Größe „magnetischer Fluss“ dient die Anzahl der magnetischen Feldlinien, welche die Leiterschleife durchstoßen. Die Größe des magnetischen Flusses wird von einem Messinstrument angezeigt.
+Eine Untersuchung der Abhängigkeiten des magnetischen Flusses von der magnetischen Feldstärke sowie von der Größe und Ausrichtung der Fläche der Leiterschleife ist mithilfe von einem Dreh- und mehreren Schiebereglern möglich.
+
+Hinweise:
+[table=2]
+[cell]•[/cell][cell]Die Verschiebung der Fläche ist mit der Maus bzw. dem Finger möglich.[/cell]
+[cell]•[/cell][cell]Die Drehung der Fläche kann mit dem Drehregler oder durch die Eingabe eines Wertes im Textfeld darüber vorgenommen werden.[/cell]
+[cell]•[/cell][cell]Die Sprache kann mit dem Knopf unten rechts auf Deutsch oder Englisch gestellt werden.[/cell]
+[/table]
+
+Dieses Programm steht unter einer Creative Commons Attribution-ShareAlike 4.0 International Lizenz.
+Für mehr Informationen dazu, siehe: [url]http://creativecommons.org/licenses/by-sa/4.0/[/url].
+
+Diese Anwendung verwendet die Godot-Engine [url]https://godotengine.org[/url].
+
+Die folgenden Fremdquellen werden in diesem Programm eingesetzt:
+[table=4]
+[cell]•[/cell][cell]brushed_metal[/cell] [cell]CC-BY[/cell] [cell][url]https://www.materialmaker.org/material?id=197[/url][/cell]
+[cell]•[/cell][cell]icon.png[/cell][cell][/cell] [cell]basierend auf [url]https://www.flaticon.com/de/kostenloses-icon/gang_5693700[/url][/cell]
+[cell]•[/cell][cell]language.svg[/cell] [cell]CC BY 4.0[/cell] [cell][url]https://fontawesome.com/icons/language?s=solid&f=classic[/url][/cell]
+[cell]•[/cell][cell]question.svg[/cell] [cell]CC BY 4.0[/cell] [cell][url]https://fontawesome.com/icons/circle-question?s=regular&f=classic[/url][/cell]
+[cell]•[/cell][cell]expand.svg[/cell] [cell]CC BY 4.0[/cell] [cell][url]https://fontawesome.com/icons/expand?s=solid&f=classic[/url][/cell]
+[cell]•[/cell][cell]compress.svg[/cell] [cell]CC BY 4.0[/cell] [cell][url]https://fontawesome.com/icons/compress?s=solid&f=classic[/url][/cell]
+[cell]•[/cell][cell]comments.svg[/cell] [cell]CC BY 4.0[/cell] [cell][url]https://fontawesome.com/icons/comments?f=classic&s=regular[/url][/cell]
+[cell]•[/cell][cell]Roboto-Regular.ttf[/cell] [cell]Apache-2.0[/cell] [cell][url]https://fonts.google.com/specimen/Roboto[/url][/cell]
+[/table]
+
+Zusätzlich werden folgende Addons verwendet:
+[table=4]
+[cell]•[/cell][cell]Antialiased Line2D[/cell] [cell]MIT[/cell] [cell][url]https://github.com/godot-extended-libraries/godot-antialiased-line2d[/url][/cell]
+[/table]
+
+Erstellt von Simon Sievert.

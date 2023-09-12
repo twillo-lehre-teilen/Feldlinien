@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/expand.svg" type="Texture" id=1]
+[ext_resource path="res://assets/images/compress.svg" type="Texture" id=2]
+[ext_resource path="res://ui/FullscreenButton.gd" type="Script" id=3]
+
+[node name="FullscreenButton" type="Control"]
+rect_pivot_offset = Vector2( -144, -9 )
+script = ExtResource( 3 )
+
+[node name="MaximizeButton" type="Button" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="MinimizeButton" type="Button" parent="."]
+visible = false
+margin_right = 32.0
+margin_bottom = 32.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[connection signal="pressed" from="MaximizeButton" to="." method="_on_MaximizeButton_pressed"]
+[connection signal="pressed" from="MinimizeButton" to="." method="_on_MinimizeButton_pressed"]

@@ -1,0 +1,285 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://ui/DefaultUI.gd" type="Script" id=1]
+[ext_resource path="res://ui/PowerMeter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/Knob.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/images/language.svg" type="Texture" id=5]
+[ext_resource path="res://ui/LanguageSelection.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/question.svg" type="Texture" id=7]
+[ext_resource path="res://ui/AboutPopup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/SpeechBubble.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/images/comments.svg" type="Texture" id=10]
+[ext_resource path="res://ui/FullscreenButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/RotationEdit.gd" type="Script" id=12]
+
+[node name="DefaultUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -213.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = 192.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 221.0
+margin_bottom = 423.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="HideUI" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_right = 216.0
+margin_bottom = 19.0
+text = "HIDE_UI"
+
+[node name="Reset" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 23.0
+margin_right = 216.0
+margin_bottom = 42.0
+text = "RESET_STATE"
+
+[node name="ChangeAreaType" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 46.0
+margin_right = 216.0
+margin_bottom = 65.0
+text = "CHANGE_AREA_TYPE"
+
+[node name="PowerMeter" parent="PanelContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 69.0
+margin_right = 216.0
+margin_bottom = 192.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 196.0
+margin_right = 216.0
+margin_bottom = 215.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_right = 103.0
+margin_bottom = 19.0
+text = "FIELD_POWER"
+
+[node name="FieldStrengthLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 198.0
+margin_right = 216.0
+margin_bottom = 19.0
+size_flags_horizontal = 10
+text = "20"
+
+[node name="FieldStrengthSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
+margin_top = 219.0
+margin_right = 216.0
+margin_bottom = 235.0
+min_value = 20.0
+max_value = 40.0
+value = 20.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 239.0
+margin_right = 216.0
+margin_bottom = 258.0
+
+[node name="AreaSizeDescriptionLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 123.0
+margin_bottom = 19.0
+text = "AREA_DIAMETER"
+
+[node name="AreaSizeLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 207.0
+margin_right = 216.0
+margin_bottom = 19.0
+size_flags_horizontal = 10
+text = "3"
+
+[node name="AreaSizeSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
+margin_top = 262.0
+margin_right = 216.0
+margin_bottom = 278.0
+min_value = 2.0
+max_value = 5.0
+step = 0.1
+value = 3.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 282.0
+margin_right = 216.0
+margin_bottom = 304.0
+
+[node name="RotationLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 1.0
+margin_right = 123.0
+margin_bottom = 20.0
+text = "AREA_ROTATION"
+
+[node name="Rotation" type="LineEdit" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 154.0
+margin_right = 206.0
+margin_bottom = 22.0
+size_flags_horizontal = 10
+text = "0"
+align = 2
+script = ExtResource( 12 )
+
+[node name="UnitLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 210.0
+margin_top = 1.0
+margin_right = 216.0
+margin_bottom = 20.0
+text = "°"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 308.0
+margin_right = 216.0
+margin_bottom = 372.0
+
+[node name="Knob" parent="PanelContainer/VBoxContainer/CenterContainer" instance=ExtResource( 3 )]
+margin_left = 76.0
+margin_right = 140.0
+
+[node name="RotateCheckbox" type="CheckBox" parent="PanelContainer/VBoxContainer"]
+margin_top = 376.0
+margin_right = 216.0
+margin_bottom = 395.0
+text = "CHECKBOX_AUTO_ROTATE"
+align = 1
+
+[node name="RotateSpeedControl" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 399.0
+margin_right = 216.0
+margin_bottom = 418.0
+alignment = 1
+
+[node name="RotateSlowerButton" type="Button" parent="PanelContainer/VBoxContainer/RotateSpeedControl"]
+margin_right = 106.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+text = "SLOWER"
+
+[node name="RotateFasterButton" type="Button" parent="PanelContainer/VBoxContainer/RotateSpeedControl"]
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+text = "FASTER"
+
+[node name="ShowUI" type="Button" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_top = 3.0
+margin_right = -3.0
+grow_horizontal = 0
+text = "SHOW_UI"
+
+[node name="LanguageSelect" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="AboutButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -42.0
+margin_top = -70.0
+margin_right = -10.0
+margin_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 7 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="ToggleHintsButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 32.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="FullscreenButton" parent="." instance=ExtResource( 11 )]
+
+[node name="LanguageSelection" parent="." instance=ExtResource( 6 )]
+margin_right = 213.0
+margin_bottom = 78.0
+
+[node name="AboutPopup" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="Hints" type="Control" parent="."]
+
+[node name="HideHintsTimer" type="Timer" parent="Hints"]
+wait_time = 3.0
+one_shot = true
+
+[node name="RotateArea" parent="Hints" instance=ExtResource( 9 )]
+margin_top = 260.0
+margin_right = -40.0
+margin_bottom = 80.0
+text = "HINT_ROTATE_AREA"
+
+[node name="MoveArea" parent="Hints" instance=ExtResource( 9 )]
+margin_top = 220.0
+margin_right = -40.0
+margin_bottom = 40.0
+text = "HINT_MOVE_AREA"
+
+[node name="ChangeLanguage" parent="Hints" instance=ExtResource( 9 )]
+margin_top = 180.0
+margin_right = -40.0
+margin_bottom = 140.0
+text = "HINT_CHANGE_LANGUAGE"
+
+[node name="RotateMagnet" parent="Hints" instance=ExtResource( 9 )]
+margin_top = 300.0
+margin_right = -40.0
+margin_bottom = 120.0
+text = "HINT_ROTATE_MAGNET"
+
+[connection signal="gui_input" from="." to="." method="_on_UI_gui_input"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HideUI" to="." method="_on_HideUI_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ChangeAreaType" to="." method="_on_ChangeAreaType_pressed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/FieldStrengthSlider" to="." method="_on_FieldStrengthSlider_value_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/AreaSizeSlider" to="." method="_on_AreaSizeSlider_value_changed"]
+[connection signal="focus_entered" from="PanelContainer/VBoxContainer/HBoxContainer3/Rotation" to="PanelContainer/VBoxContainer/HBoxContainer3/Rotation" method="_on_focus_entered"]
+[connection signal="text_entered" from="PanelContainer/VBoxContainer/HBoxContainer3/Rotation" to="." method="_on_Rotation_text_entered"]
+[connection signal="text_entered" from="PanelContainer/VBoxContainer/HBoxContainer3/Rotation" to="PanelContainer/VBoxContainer/HBoxContainer3/Rotation" method="_on_text_entered"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/CenterContainer/Knob" to="." method="_on_Knob_value_changed"]
+[connection signal="toggled" from="PanelContainer/VBoxContainer/RotateCheckbox" to="." method="_on_RotateCheckbox_toggled"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RotateSpeedControl/RotateSlowerButton" to="." method="_on_RotateSlowerButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RotateSpeedControl/RotateFasterButton" to="." method="_on_RotateFasterButton_pressed"]
+[connection signal="pressed" from="ShowUI" to="." method="_on_ShowUI_pressed"]
+[connection signal="pressed" from="LanguageSelect" to="." method="_on_LanguageSelect_pressed"]
+[connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="ToggleHintsButton" to="." method="_on_ToggleHintsButton_pressed"]
+[connection signal="closed" from="AboutPopup" to="." method="_on_AboutPopup_closed"]
+[connection signal="timeout" from="Hints/HideHintsTimer" to="." method="_on_HideHintsTimer_timeout"]

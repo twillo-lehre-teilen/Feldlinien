@@ -1,0 +1,9 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/materials/brushed_metal/brushed_metal_base_albedo.png" type="Texture" id=2]
+
+[resource]
+flags_unshaded = true
+albedo_color = Color( 0, 0.415686, 1, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true

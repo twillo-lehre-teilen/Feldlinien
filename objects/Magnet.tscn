@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/materials/brushed_metal/brushed_metal_top.tres" type="Material" id=1]
+[ext_resource path="res://assets/materials/brushed_metal/brushed_metal_bot.tres" type="Material" id=2]
+[ext_resource path="res://objects/Magnet.gd" type="Script" id=3]
+[ext_resource path="res://assets/models/FieldLineIndicatorTopMesh.tres" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/models/FieldLineIndicatorBotMesh.tres" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/models/FieldLineMesh.tres" type="ArrayMesh" id=6]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 3, 0.1, 2 )
+
+[sub_resource type="MultiMesh" id=9]
+color_format = 2
+transform_format = 1
+custom_data_format = 2
+instance_count = 1
+mesh = ExtResource( 6 )
+transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+color_array = PoolColorArray( 1, 1, 1, 1 )
+custom_data_array = PoolColorArray( 0, 0, 0, 0 )
+
+[sub_resource type="MultiMesh" id=8]
+color_format = 2
+transform_format = 1
+custom_data_format = 2
+mesh = ExtResource( 4 )
+
+[sub_resource type="MultiMesh" id=10]
+color_format = 2
+transform_format = 1
+custom_data_format = 2
+mesh = ExtResource( 5 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 2.5, 0.05, 2 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 2.5, 0.05, 2 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.05, 0.75, 2 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.6, 0.75, 0.05 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 1.51034, 0.0637931, 1.01724, -1.51027, -0.0603448, -1.01034, -1.51027, -0.0603448, 1.01724, -1.51027, 0.0637931, -1.01034, 1.51034, -0.0603448, -1.01034, -1.51027, 0.0637931, 1.01724, 1.51034, -0.0603448, 1.01724, 1.51034, 0.0637931, -1.01034 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 1.51034, 0.0637931, 1.01724, -1.51027, -0.0603448, -1.01034, -1.51027, -0.0603448, 1.01724, -1.51027, 0.0637931, -1.01034, 1.51034, -0.0603448, -1.01034, -1.51027, 0.0637931, 1.01724, 1.51034, -0.0603448, 1.01724, 1.51034, 0.0637931, -1.01034 )
+
+[node name="Magnet" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Top" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="Bot" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="FieldLines" type="MultiMeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.625, 0 )
+multimesh = SubResource( 9 )
+
+[node name="TopIndicators" type="MultiMeshInstance" parent="."]
+multimesh = SubResource( 8 )
+
+[node name="BotIndicators" type="MultiMeshInstance" parent="."]
+multimesh = SubResource( 10 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Top" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+shape = SubResource( 6 )
+
+[node name="Bot" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0 )
+shape = SubResource( 7 )
+
+[node name="Left" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="Right" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="Back" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.05 )
+shape = SubResource( 5 )
+
+[node name="Front" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.05 )
+shape = SubResource( 5 )
+
+[node name="NoDragLoopArea" type="Area" parent="."]
+collision_layer = 4
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": ""
+}
+
+[node name="Top" type="CollisionShape" parent="NoDragLoopArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
+shape = SubResource( 2 )
+
+[node name="Bot" type="CollisionShape" parent="NoDragLoopArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0 )
+shape = SubResource( 3 )
